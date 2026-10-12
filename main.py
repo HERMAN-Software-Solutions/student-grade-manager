@@ -27,3 +27,12 @@ def add_student(students):
     student = {"name": name, "grade": grade}
     students.append(student)
     print(f"Added {name} with grade {grade}. ")
+    
+def view_students(students):
+    if not students:
+        print("No students yet. ")
+        return
+    print()
+    print("---All Students---")
+    for student in students:
+        print(f"{student['name']} : {student['grade']}")
