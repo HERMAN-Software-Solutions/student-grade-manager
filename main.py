@@ -36,3 +36,17 @@ def view_students(students):
     print("---All Students---")
     for student in students:
         print(f"{student['name']} : {student['grade']}")
+        
+def main():
+    students = []
+    while True:
+        choice = menu()
+        if choice == "1":
+            add_student(students)
+        elif choice == "2":
+            view_students(students)
+        elif choice == "3":
+            print("Goodbye")
+            break
+        else:
+            print("invalid choice. Try again. ")
