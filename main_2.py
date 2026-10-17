@@ -43,3 +43,24 @@ def add_student(students):
     student = {"name": name, "grade": grade}
     students.append(student)
     print(f"Added {name} with grade {grade}. ")
+    
+def main():
+    students = []
+    while True:
+        choice = menu()
+        if choice == "1":
+            add_student(students)
+        elif choice == "2":
+            view_students(students)
+        elif choice == "3":
+            search_student_grade(students)
+        elif choice == "4":
+            print("Goodbye")
+            break
+        else:
+            print("invalid choice. Try again. ")
+            
+
+            
+if __name__ == "__main__":
+    main()    
