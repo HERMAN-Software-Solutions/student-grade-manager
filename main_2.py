@@ -32,3 +32,14 @@ def search_student_grade(students):
     student = input("enter the name of the student : ")
     if student in students:
         print(f"{student['name']} : {student['grade']}")
+        
+def add_student(students):
+    name = input("Student name : ")
+    try:
+        grade = int(input("Student grade : "))
+    except ValueError:
+        
+        print("only integers are allowed1")
+    student = {"name": name, "grade": grade}
+    students.append(student)
+    print(f"Added {name} with grade {grade}. ")
