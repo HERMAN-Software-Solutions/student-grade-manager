@@ -6,27 +6,30 @@
 # 5. if 3 - quit
 # Repeat until quit
 
-def main():
-    print("Student Grade Manager - starting up")
     
-if __name__ == "__main__":
-    main()
+
     
 def menu():
     print()
     print("=== Student Grade Manager ===")
     print("1. Add Student")
     print("2. View all students")
-    print("3. Quit")
+    print("3. search students")
+    print("4. Quit")
     choice = input("choose an option : ")
     return choice
 
 def add_student(students):
     name = input("Student name : ")
-    grade = int(input("Student grade : "))
+    try:
+        grade = int(input("Student grade : "))
+    except ValueError:
+        
+        print("only integers are allowed1")
     student = {"name": name, "grade": grade}
     students.append(student)
     print(f"Added {name} with grade {grade}. ")
+   
     
 def view_students(students):
     if not students:
@@ -35,6 +38,11 @@ def view_students(students):
     print()
     print("---All Students---")
     for student in students:
+        print(f"{student['name']} : {student['grade']}")
+        
+def search_student_grade(students):
+    student = input("enter the name of the student : ")
+    if student in students:
         print(f"{student['name']} : {student['grade']}")
         
 def main():
@@ -46,7 +54,14 @@ def main():
         elif choice == "2":
             view_students(students)
         elif choice == "3":
+            search_student_grade(students)
+        elif choice == "4":
             print("Goodbye")
             break
         else:
             print("invalid choice. Try again. ")
+            
+
+            
+if __name__ == "__main__":
+    main()    
