@@ -27,3 +27,8 @@ def view_students(students):
     print("---All Students---")
     for student in students:
         print(f"{student['name']} : {student['grade']}")
+        
+def search_student_grade(students):
+    student = input("enter the name of the student : ")
+    if student in students:
+        print(f"{student['name']} : {student['grade']}")
