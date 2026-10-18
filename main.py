@@ -1,4 +1,9 @@
 
+import json
+import os
+
+DATA_FILE = "students.json"
+
 def add_student(students):
     name = input("Student name : ")
     
@@ -50,6 +55,17 @@ def main():
             break
         else:
             print("invalid choice. Try again. ")
+            
+def save_students(students):
+    with open(DATA_FILE, "w") as file:
+        json.dump(students, file, indent=4)
+    print("Data saved.")
+    
+def load_students():
+    if not os.path.exists(DATA_FILE):
+        return []
+    with open(DATA_FILE, "r") as file:
+        return json.load(file)
             
 
             
