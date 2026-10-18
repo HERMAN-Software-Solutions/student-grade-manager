@@ -24,9 +24,16 @@ def view_students(students):
         print(f"{student['name']} : {student['grade']}")
         
 def search_student_grade(students):
-    student = input("enter the name of the student : ")
-    if student in students:
-        print(f"{student['name']} : {student['grade']}")
+    if not students:
+        print("No students to search. ")
+        return
+    search_name = input("Enter the name of the student: ").lower()
+    for student in students:
+        if student["name"].lower() == search_name:
+            print(f"Found : {student['name']} : {student['grade']}")
+            return
+        
+    print(f"No student found with the name : {search_name}.")
         
 def main():
     students = []
