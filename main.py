@@ -52,10 +52,12 @@ def search_student_grade(students):
         
 def main():
     students = []
+    students = load_students()
     while True:
         choice = menu()
         if choice == "1":
             add_student(students)
+            save_students(students)
         elif choice == "2":
             view_students(students)
         elif choice == "3":
