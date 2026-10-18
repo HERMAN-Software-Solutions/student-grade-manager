@@ -4,6 +4,16 @@ import os
 
 DATA_FILE = "students.json"
 
+def menu():
+    print()
+    print("------ Student Grade Manager -------")
+    print("1. Add student")
+    print("2. view all students")
+    print("3. search all students")
+    print("4. Quit")
+    choice = input("Choose an option : ")
+    return choice
+
 def add_student(students):
     name = input("Student name : ")
     
