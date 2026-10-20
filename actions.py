@@ -1,0 +1,41 @@
+from storage import save_students
+
+def add_student(students):
+    """Prompts the user to add a new student and saves the data. """
+    
+    name = input("Student name : ")
+    
+    while True:
+        try:
+            grade = int(input("Student grade : "))
+            break
+        except ValueError:
+            
+            print("Error : Grade must be a number. Try again.")
+    student = {"name": name, "grade": grade}
+    students.append(student)
+    print(f"Added {name} with grade {grade}. ")
+    
+    save_students(students)
+   
+    
+def view_students(students):
+    if not students:
+        print("No students yet. ")
+        return
+    print()
+    print("---All Students---")
+    for student in students:
+        print(f"{student['name']} : {student['grade']}")
+        
+def search_student_grade(students):
+    if not students:
+        print("No students to search. ")
+        return
+    search_name = input("Enter the name of the student: ").lower()
+    for student in students:
+        if student["name"].lower() == search_name:
+            print(f"Found : {student['name']} : {student['grade']}")
+            return
+        
+    print(f"No student found with the name : {search_name}.")
