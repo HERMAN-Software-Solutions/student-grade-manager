@@ -39,3 +39,18 @@ def search_student_grade(students):
             return
         
     print(f"No student found with the name : {search_name}.")
+    
+def delete_student(students):
+    """Delete a student from thr list by name. """
+    if not students:
+        print("No students to delete.")
+        return
+    
+    name_to_delete = input("Enter the name of the students to delete:").lower()
+    for i, student in enumerate(students):
+        if student["name"].lower() == name_to_delete:
+            students.pop(i)
+            print(f"Deleted {student['name']}")
+            save_students(students)
+            return
+    print(f"No student found with the name '{name_to_delete}'.")
