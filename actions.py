@@ -54,3 +54,16 @@ def delete_student(students):
             save_students(students)
             return
     print(f"No student found with the name '{name_to_delete}'.")
+    
+def show_average(students):
+    """Calculates and displays the class average"""
+    if not students:
+        print("No students to calculate an average for. ")
+        return
+    
+    total = 0
+    for student in students:
+        total += student["grade"]
+        
+    average = total / len(students)
+    print(f"The calss average is : {average:.2f}")
