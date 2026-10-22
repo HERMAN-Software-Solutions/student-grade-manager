@@ -68,7 +68,7 @@ def show_average(students):
     average = total / len(students)
     print(f"The calss average is : {average:.2f}")
     
-def sort_stduents(students):
+def sort_students(students):
     """SOrt the students list by grade from highest to lowest."""
     if not students:
         print("No students to sort.")
