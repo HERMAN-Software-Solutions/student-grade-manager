@@ -1,10 +1,14 @@
 [
     {
         "name": "pablo",
-        "grade": 96
+        "grade": 90
     },
     {
-        "name": "joe",
-        "grade": 88
+        "name": "narco",
+        "grade": 75
+    },
+    {
+        "name": "chapo",
+        "grade": 85
     }
 ]

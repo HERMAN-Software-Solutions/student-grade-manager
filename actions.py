@@ -20,6 +20,7 @@ def add_student(students):
    
     
 def view_students(students):
+    """view any student in the list"""
     if not students:
         print("No students yet. ")
         return
@@ -29,6 +30,7 @@ def view_students(students):
         print(f"{student['name']} : {student['grade']}")
         
 def search_student_grade(students):
+    """search for a student in the list"""
     if not students:
         print("No students to search. ")
         return
@@ -41,7 +43,7 @@ def search_student_grade(students):
     print(f"No student found with the name : {search_name}.")
     
 def delete_student(students):
-    """Delete a student from thr list by name. """
+    """Delete a student from the list by name. """
     if not students:
         print("No students to delete.")
         return
@@ -66,10 +68,10 @@ def show_average(students):
         total += student["grade"]
         
     average = total / len(students)
-    print(f"The calss average is : {average:.2f}")
+    print(f"The class average is : {average:.2f}")
     
 def sort_students(students):
-    """SOrt the students list by grade from highest to lowest."""
+    """Sort the students list by grade from highest to lowest."""
     if not students:
         print("No students to sort.")
         return
